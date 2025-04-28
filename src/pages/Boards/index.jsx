@@ -1,17 +1,9 @@
-import React from 'react'
 
-function AppBar() {
+function index() {
   return (
-    <Box sx={{
-      backgroundColor: 'primary.light',
-      width: '100%',
-      height: (theme) => theme.trello.appBarHeight,
-      display: 'flex',
-      alignItems: 'center'
-    }}>
-      <ModeSelector />
-    </Box>
+    <div>
+    </div>
   )
 }
 
-export default AppBar
+export default index
