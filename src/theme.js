@@ -8,19 +8,60 @@ const theme = extendTheme({
   colorSchemes: {
     light: {
       palette: {
-        // primary: {
-        //   main: '#ff5252'
-        // }
+        primary: {
+          main: '#295F98'
+        }
       }
     },
     dark: {
       palette: {
-        // primary: {
-        //   main: '#000'
-        // }
+        primary: {
+          main: '#EAE4DD'
+        }
+      }
+    }
+  },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          textTransform: 'none'
+        }
+      }
+    },
+    MuiInputLabel: {
+      styleOverrides: {
+        root: ({ theme }) => {
+          return {
+            color: theme.palette.primary.main,
+            fontSize: '0.875rem'
+          }
+        }
+      }
+    },
+    MuiOutlinedInput: {
+      styleOverrides: {
+        root: ({ theme }) => {
+          return {
+            color: theme.palette.primary.main,
+            fontSize: '0.875rem',
+            '.MUIOutlinedInput-notchedOutline': {
+              borderColor: theme.palette.primary.light
+            },
+            '&:hover':{
+              '.MUIOutlinedInput-notchedOutline': {
+                borderColor: theme.palette.primary.main
+              }
+            },
+            '& fieldset': {
+              borderWidth: '1px !important'
+            }
+          }
+        }
       }
     }
   }
+  // Other properties
 })
 
 export default theme
