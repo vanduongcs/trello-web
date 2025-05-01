@@ -26,6 +26,7 @@ function Startes() {
   return (
     <Box>
       <Button
+        sx={{ color: '#f5f6fa' }}
         id="basic-button-startes"
         aria-controls={open ? 'basic-menu-startes' : undefined}
         aria-haspopup="true"
