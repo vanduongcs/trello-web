@@ -33,7 +33,7 @@ function Profiles() {
           aria-haspopup="true"
           aria-expanded={open ? 'true' : undefined}
         >
-          <Avatar sx={{ width: 32, height: 32 }} src='https://cdn-kmfel.nitrocdn.com/uMVObCziJWycROCfTnqalPiKHatgnzNl/assets/images/optimized/rev-999170d/polar-latitudes.com/wp-content/uploads/2020/01/polar-latitudes-adelie-penguin-highway.jpg'/>
+          <Avatar sx={{ width: 35, height: 35 }} src='https://cdn-kmfel.nitrocdn.com/uMVObCziJWycROCfTnqalPiKHatgnzNl/assets/images/optimized/rev-999170d/polar-latitudes.com/wp-content/uploads/2020/01/polar-latitudes-adelie-penguin-highway.jpg'/>
         </IconButton>
       </Tooltip>
       <Menu
@@ -46,10 +46,10 @@ function Profiles() {
         }}
       >
         <MenuItem>
-          <Avatar sx={{width: '28px', height: '28px', mr: 2 }}/> Profile
+          <Avatar sx={{width: '35px', height: '35px', mr: 2 }}/> Profile
         </MenuItem>
         <MenuItem>
-          <Avatar sx={{width: '28px', height: '28px', mr: 2 }}/> My account
+          <Avatar sx={{width: '35px', height: '35px', mr: 2 }}/> My account
         </MenuItem>
         <Divider />
         <MenuItem>

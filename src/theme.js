@@ -6,20 +6,26 @@ const theme = extendTheme({
     boardBarHeight: '70px'
   },
   colorSchemes: {
-    light: {
-      palette: {
-        primary: {
-          main: '#295F98'
-        }
-      }
-    },
-    dark: {
-      palette: {
-        primary: {
-          main: '#EAE4DD'
-        }
-      }
-    }
+    // light: {
+    //   palette: {
+    //     primary: {
+    //       main: '#295F98'
+    //     },
+    //     action: {
+    //       selected: '#f2f2f3'
+    //     }
+    //   }
+    // },
+    // dark: {
+    //   palette: {
+    //     primary: {
+    //       main: '#EAE4DD'
+    //     },
+    //     action: {
+    //       selected: '#272834'
+    //     }
+    //   }
+    // }
   },
   components: {
     MuiCssBaseline: {
@@ -30,11 +36,11 @@ const theme = extendTheme({
             height: '8px'
           },
           '*::-webkit-scrollbar-thumb': {
-            backgroundColor: '#bdc3c7',
+            backgroundColor: '#dcdde1',
             borderRadius: '8px'
           },
           '*::-webkit-scrollbar-thumb:hover': {
-            backgroundColor: '#8a8a8a',
+            backgroundColor: '#f5f6fa',
             borderRadius: '8px'
           }
         }
@@ -51,7 +57,6 @@ const theme = extendTheme({
       styleOverrides: {
         root: ({ theme }) => {
           return {
-            color: theme.palette.primary.main,
             fontSize: '0.875rem'
           }
         }
@@ -59,22 +64,10 @@ const theme = extendTheme({
     },
     MuiOutlinedInput: {
       styleOverrides: {
-        root: ({ theme }) => {
-          return {
-            color: theme.palette.primary.main,
-            fontSize: '0.875rem',
-            '.MUIOutlinedInput-notchedOutline': {
-              borderColor: theme.palette.primary.light
-            },
-            '&:hover':{
-              '.MUIOutlinedInput-notchedOutline': {
-                borderColor: theme.palette.primary.main
-              }
-            },
-            '& fieldset': {
-              borderWidth: '1px !important'
-            }
-          }
+        root: {
+          fontSize: '0.875rem',
+          '& fieldset': { borderWidth: '1px !important' },
+          '&.Mui-focused fieldset': { borderWidth: '1px !important' }
         }
       }
     }
