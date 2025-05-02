@@ -33,8 +33,8 @@ function BoardBar() {
       gap: 2,
       paddingX: 2,
       overflowX: 'auto',
-      borderBottom: '1px solid rgb(30, 0, 100)',
-      bgcolor: (theme) => (theme.palette.mode === 'dark' ? '#353b48' : '#2f94ff' )
+      // borderBottom: '1px solid rgb(30, 0, 100)',
+      backgroundColor: (theme) => (theme.palette.mode === 'dark' ? '#353b48' : '#2f94ff' )
     }}>
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
         <Chip
@@ -80,7 +80,14 @@ function BoardBar() {
             gap: '2px',
             '& .MuiAvatar-root': {
               width: 35,
-              height: 35
+              height: 35,
+              fontSize: 16,
+              color: '#f5f6fa',
+              backgroundColor: '#2f94ff',
+              cursor: 'pointer',
+              '&:first-of-type': {
+                backgroundColor: '#a4b0be'
+              }
             }
           }}>
           <Tooltip title="Vanduongcs">
