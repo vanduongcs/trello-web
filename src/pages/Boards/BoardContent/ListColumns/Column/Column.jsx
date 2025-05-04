@@ -17,8 +17,26 @@ import BookmarkAddIcon from '@mui/icons-material/BookmarkAdd'
 import AddToPhotosIcon from '@mui/icons-material/AddToPhotos'
 import DragHandleIcon from '@mui/icons-material/DragHandle'
 import ListCards from './ListCards/ListCards'
+import { mapOrder } from '~/utils/sorts'
 
-function Column() {
+import { useSortable } from '@dnd-kit/sortable'
+import { CSS } from '@dnd-kit/utilities'
+
+function Column({ column }) {
+  const {
+    attributes,
+    listeners,
+    setNodeRef,
+    transform,
+    transition
+  } = useSortable({ id: column._id, data: { ...column } })
+  const dndKitColumnStyles = {
+    // touchAction: 'none', // Support mobile
+    transform: CSS.Translate.toString(transform),
+    transition
+  }
+
+  const orderedCards = mapOrder(column?.cards, column?.cardOrderIds, '_id')
   const [anchorEl, setAnchorEl] = React.useState(null)
   const open = Boolean(anchorEl)
   const handleClick = (event) => {
@@ -29,6 +47,10 @@ function Column() {
   }
   return (
     <Box
+      ref={ setNodeRef }
+      style={ dndKitColumnStyles }
+      {...attributes}
+      {...listeners}
       sx={{
         minWidth: '300px',
         maxWidth: '300px',
@@ -39,20 +61,21 @@ function Column() {
         maxHeight: (theme) => `calc(${theme.trello.boardContentHeight} - ${theme.spacing(5)})`
       }}>
       {/* Column header */}
-      <Box sx={{
-        height: (theme) => theme.trello.columnHeaderHeight,
-        p: 2,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between'
-      }}>
+      <Box
+        sx={{
+          height: (theme) => theme.trello.columnHeaderHeight,
+          p: 2,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between'
+        }}>
         <Typography
           variant="h6"
           sx={{
             fontWeight: 'bold',
             cursor: 'pointer',
             fontSize: '1rem'
-          }}>Column Title</Typography>
+          }}>{column?.title}</Typography>
         <Box>
           <Tooltip title="More options">
             < ArrowDropDownIcon
@@ -109,7 +132,7 @@ function Column() {
         </Box>
       </Box>
       {/* Column content */}
-      <ListCards />
+      <ListCards cards={ orderedCards }/>
       {/* Column footer */}
       <Box sx={{
         height: (theme) => theme.trello.columnFooterHeight,
