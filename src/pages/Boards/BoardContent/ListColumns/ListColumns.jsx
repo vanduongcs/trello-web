@@ -6,7 +6,7 @@ import AddBoxIcon from '@mui/icons-material/AddBox'
 import { SortableContext, horizontalListSortingStrategy } from '@dnd-kit/sortable'
 
 function ListColumns({ columns }) {
-    {/*
+  {/*
       SortableContext yêu cầu items là dạng mảng (các phần tử nguyên thủy)
       Không cho phép dạng mảng với các object bên trong
       Nếu là các object thì không có animation
